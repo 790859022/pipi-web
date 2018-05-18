@@ -1,0 +1,254 @@
+@import "../../app.less";
+
+.index-container {
+    @tipTextColor: #e3b56e;
+    @paddingTop: 20px;
+    @paddingLeft: 15px;
+    @titleSize: 20px;
+
+    .title {
+        font-size: @titleSize;
+        font-weight: normal;
+    }
+    .title-tip {
+        font-size: 12px;
+        font-weight: normal;
+        color: #999;
+    }
+    padding: 0 @paddingLeft;
+
+    .icon-cart {
+        @iconW: 30px;
+        @numW: 16px;
+        position: fixed;
+        z-index: 10;
+        right: @paddingLeft;
+        bottom: @paddingLeft * 2;
+        background: #464851;
+        color: #ffffff;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
+        -moz-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
+        box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
+        padding: 8px;
+        width: @iconW;
+        height: @iconW;
+        line-height: @iconW;
+        .num {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: @numW;
+            height: @numW;
+            line-height: @numW;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #fff;
+            -webkit-transform-origin: top right;
+            transform-origin: top right;
+            -webkit-transform: scale(.8);
+            -moz-transform: scale(.8);
+            -ms-transform: scale(.8);
+            -o-transform: scale(.8);
+            transform: scale(.8);
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            background: @tipTextColor;
+            color: #ffffff;
+        }
+        .icon {
+            font-size: 30px;
+            display: block;
+        }
+    }
+    .user-address {
+        text-align: center;
+        font-size: 16px;
+        padding: @paddingTop 0;
+        cursor: pointer;
+        p {
+            margin: 0;
+        }
+        .name {
+            margin-bottom: 10px;
+            .icon {
+                margin: 0 5px;
+                &:last-child {
+                    color: #999;
+                }
+            }
+        }
+        .tip {
+            color: @tipTextColor;
+            font-size: 12px;
+        }
+    }
+    .pipi-rmd {
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 3px 16px 0 rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0px 3px 16px 0 rgba(0, 0, 0, .2);
+        box-shadow: 0px 3px 16px 0 rgba(0, 0, 0, .2);
+
+        margin-bottom: 20px;
+
+        h2 {
+            .title;
+            margin: 0;
+            padding: @paddingLeft;
+            span {
+                .title-tip;
+            }
+
+        }
+        img {
+            display: block;
+        }
+    }
+
+    .list {
+        .title {
+            position: relative;
+            margin-bottom: 10px;
+            .name {
+                .title;
+            }
+            .tip {
+                .title-tip;
+                padding-left: 5px;
+            }
+            .btn-filter {
+                .trans-default;
+                position: absolute;
+                right: 0;
+                font-size: 14px;
+                .icon {
+                    font-size: 14px;
+                }
+                &.show {
+                    color: @tipTextColor;
+                }
+            }
+        }
+        .filter-layer {
+            background: #fafafa;
+            margin: 0 -@paddingLeft;
+            padding: @paddingLeft - 5;
+            margin-bottom: 10px;
+            display: none;
+            &.show {
+                display: block;
+            }
+            ul, li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            li {
+                .btn-default;
+                .trans-default;
+                display: inline-block;
+                margin: 5px;
+                background: #e5e5e5;
+                color: #333;
+                &.active {
+
+                    .btn-default;
+                    margin: 5px;
+                }
+            }
+        }
+        .type-tab {
+
+            font-size: 14px;
+            overflow: hidden;
+            ul, li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+            }
+            ul {
+                white-space: nowrap;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
+                padding-bottom: 10px;
+            }
+            li {
+                display: inline-block;
+                color: #999;
+                padding-right: 20px;
+                font-size: 14px;
+                line-height: 1em;
+                &:last-child {
+                    padding-right: 0;
+                }
+                &.active {
+                    color: #333;
+                }
+            }
+        }
+
+        .type-list {
+            margin: 0 -@paddingLeft;
+
+            .item {
+                position: relative;
+                padding: @paddingLeft;
+                border-top: 1px solid #eee;
+                display: flex;
+                align-items: flex-start;
+                img {
+                    max-width: 100px;
+                    height: auto;
+                }
+                img + div {
+                    padding-left: 10px;
+                    font-size: 12px;
+                }
+            }
+            .item-name {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .item-unit {
+                .title-tip;
+            }
+            .item-tag {
+                margin-bottom: 5px;
+                span {
+                    font-size: 12px;
+                    line-height: 1em;
+                    padding: 2px 4px;
+                    display: inline-block;
+                    border: 1px solid @tipTextColor;
+                    color: @tipTextColor;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    border-radius: 10px;
+                }
+            }
+            .item-desc {
+                color: #999;
+                margin-bottom: 10px;
+            }
+            .item-price {
+                font-size: 18px;
+                color: @tipTextColor;
+            }
+            .btn-add {
+                position: absolute;
+                right: @paddingLeft;
+                bottom: @paddingLeft;
+                .icon {
+                    font-size: 20px;
+                }
+                color: @tipTextColor;
+            }
+        }
+    }
+}
